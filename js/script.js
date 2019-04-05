@@ -1,27 +1,3 @@
-// function wave(enterWord){
-//   let result = [];
-//   let wordToArr = enterWord.split("");
-//   let upperCase, lowerCase;
-//   for (var i = 0; i < wordToArr.length; i++) {
-//     upperCase = wordToArr[i].toUpperCase()
-//     if (wordToArr[i] === " " && typeof(wordToArr[i-1]) === "string"){
-//         lowerCase = wordToArr[i-1].toLowerCase();
-//     }
-//     else if (wordToArr[i-1] !== undefined) {
-//       lowerCase = wordToArr[i-1].toLowerCase();
-//       wordToArr.splice(i-1, 2, lowerCase, upperCase);
-//       result.push(wordToArr.join(""));
-//     }
-//     else if (enterWord.charAt(i) !== 0 && wordToArr[i] !== " ") {
-//       wordToArr.splice(i, 1, upperCase);
-//       result.push(wordToArr.join(""));
-//     }
-//   }
-//   return result;
-// }
-// // console.log(typeof("hi") === "string");
-
-
 
 function wave(enterWord){
   let result = [];
@@ -31,46 +7,53 @@ function wave(enterWord){
   let lowerCharIndex = null;
 
   for (var i = 0; i < wordToArr.length; i++) {
+
     if (wordToArr[i] === " ") {
+
       if ((wordToArr[i-1] === undefined || wordToArr[i-1] === " ")){
         continue;
       }
+
       else if(typeof(wordToArr[i-1]) === 'string'){
         lowerCharIndex = i;
         lowerCase = wordToArr[i-1].toLowerCase();
         continue;
       }
+
     }
-    else if (typeof(wordToArr[i] === "string")){
+
+    else if (typeof(wordToArr[i] === "string")) {
+
         upperCase = wordToArr[i].toUpperCase();
+
         if (wordToArr[i-1] === undefined) {
           wordToArr.splice(i, 1, upperCase);
         }
+
         else if (wordToArr[i-1] === " ") {
+
           if (lowerCharIndex !== null) {
             wordToArr.splice(lowerCharIndex-1, 1, lowerCase);
             wordToArr.splice(i, 1, upperCase);
           }
+
           else {
             wordToArr.splice(i, 1, upperCase);
           }
+
         }
-        else {
+
+        else{
           lowerCase = wordToArr[i-1].toLowerCase();
           wordToArr.splice(i-1, 2, lowerCase, upperCase);
         }
+
         result.push(wordToArr.join(""))
     }
   }
   return result;
 }
 console.log(wave(" hello world   "));
-
-
-// console.log(wave("hello"));
-// console.log(wave("codewars"));
-// console.log(wave(""));
-// console.log(wave(" gap "));
 
 // var str1 = "Some,Text dasd;xcvxcv";
 // var delemiter = " ,;"
@@ -80,7 +63,6 @@ console.log(wave(" hello world   "));
 // // var result = [];
 // var word;
 //
-// var =
 //
 //
 // // console.log(delemiterToArr);
