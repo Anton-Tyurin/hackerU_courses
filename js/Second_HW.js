@@ -51,8 +51,7 @@ function Student(name, surname, fathername, email) {
   };
 
   this.printUser = function() {
-  console.log(
-      "Student name: " + this._name + " " + "\n"
+  return "Student name: " + this._name + " " + "\n"
     + "Student surname: " + this._surname + " " + "\n"
     + "Student fathername: " + this._fathername + " " + "\n"
     + "Student email: " + this._email + " " + "\n"
@@ -60,7 +59,7 @@ function Student(name, surname, fathername, email) {
     + "Student phone region: " + this.contactPhone.region  + " " + "\n"
     + "Student phone number: " + this.contactPhone.number + " " + "\n"
     + "Student marks: " + this.marks + " " + "\n"
-    + "Student average rating: " + this.averageRating + " " + "\n")
+    + "Student average rating: " + this.averageRating + " " + "\n"
   };
 };
 // ПРОВЕРКИ
